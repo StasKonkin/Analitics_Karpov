@@ -1,0 +1,32 @@
+1) ⭐️ Task with an asterisk! ⭐️
+Load data from Google Sheets, which are located in the folder (table - Sheet1) using the library requests. Calculate the percentage of men among all visitors to the site, round the answer to integers.
+
+Use this code to translate the data from request to pandas:
+
+from io import BytesIO
+import requests
+
+req = requests.get(your_link)
+data = req.content
+
+df = pd.read_csv(BytesIO(data))
+
+2) Download the file with Yandex.Metric site attendance data (karpov_courses_test.csv). Using the np.where function, create a series that will record 1 if the visits were made by robots from a browser containing Chrome in the name and 0 in other cases. Put the resulting series into the chrome_robots variable.
+
+May need:
+str.contains()
+
+3) ⭐️ Task with an asterisk!⭐️
+You have a dataset sample_ads.csv with data on clicks and impressions by ad, there are gaps in this dataset. Calculate the number of rows with no skips in the click_type column. Write the answer to the not_nan_count variable
+
+    ad_id - ad id
+    user_id - user id
+    click_type - click type (click on the ad title, click in the centre).
+
+4) ⭐️ Task with an asterisk!⭐️
+The lst list contains various items. Create a new_list and do the following:
+- using the try except and loop construct, try to convert each value in the list to int
+- if it succeeds - add the converted value to the new_list
+
+5) ⭐️ Task with an asterisk! ⭐️
+Now let's try to use the knowledge of using Telegram API. Send any message to yourself in a private message box, and in response to this step write the nickname of the bot on behalf of which you will send messages.
