@@ -1,0 +1,22 @@
+This time we have a dataset about advertisements
+
+Here is the data of interactions with ads on a certain site over a period of 6 days. And a table with the characteristics of the ad clients (those who placed these ads).
+
+ads_data.csv - data of interactions with ads
+date - date
+time - time
+event - action (view/click)
+platform - platform
+ad_id - id of ad
+client_union_id - id of the advertising account
+campaign_union_id - id of the advertising campaign
+ad_cost_type - payment type
+ad_cost - price
+has_video - whether there is video
+target_audience_count - size of audience
+
+ads_clients_data.csv - characteristics of ad clients
+date - date
+client_union_id - id of ad clients
+community_id - id of community
+create_date - date of creation of advertising client

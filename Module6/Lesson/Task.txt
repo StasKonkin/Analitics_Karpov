@@ -1,0 +1,91 @@
+1) Suppose that Tolya likes avocados and decides to look at the price dynamics of this product in the US. There is the following data set from the Hass Avocado Board 🥑:
+Date - date.
+AveragePrice is the average price of an avocado.
+Total Volume - number of avocados sold
+4046 - number of avocados sold PLU* 4046
+4225 - number of avocados sold PLU 4225
+4770 - number of avocados sold PLU 4770
+Total Bags - Total Bags
+Small Bags - small bags
+Large Bags - large
+XLarge Bags - very large
+Type - Regular or Organic
+year - year
+Region - the city or region of the destination
+*PLU - product lookup code
+*Dataframe does not contain data for each day, but for the end of each week. For each date, there are several observations differing in terms of type of avocado and region of sale. Suppose we are not interested in this separation, so the avocado_mean records the aggregated data, where:
+avocado_mean = pd.read_csv("path",
+                           index_col=0, squeeze=True, parse_dates=['Date'])
+
+                           Date
+                           2015-01-04 1.301296
+                           2015-01-11 1.370648
+                           2015-01-18 1.391111
+                           2015-01-25 1.397130
+                           2015-02-01 1.247037
+                           Name: AveragePrice, dtype: float64
+
+2) Calculate the moving average of the avocado price (AveragePrice) with a window of 3 (window). What is the maximum value? Round up the answer to 2 decimal places.
+
+3) Great! In addition to avocados, Tolya likes to look at graphs. Now it is time to see how the graph will change depending on the chosen window size.
+Your task is to plot a moving average with different values of the window parameter (2, 4, 10, 50), look at the changes, and relate the pictures below to the corresponding window size. (task3.png)
+
+4) ⭐️Task with an asterisk! ⭐️
+Examine the function parameters:
+- axis
+- center
+- closed
+- min_periods
+- on
+- win_type
+- window
+in the documentation https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html and give a description of each of the above.
+
+5) ⭐️Task with asterisk!⭐️
+Use the avocado_mean.csv aggregated avocado price data and apply ewm() with parameter span=2 to get an exponential moving average. Record the result in avocado_ewm.
+
+6) ⭐️Task with asterisk!⭐️
+And one more step to consolidate the material. Import complete data, (avocado_full.csv) specifying index_col=0 (use first column as index).
+For avocados of organic type in Chicago (region), calculate a moving average with window 4 and an exponential moving average with span=4. Plot the graphs and then fill in the blanks. Round up the numbers to three decimal places after the point.
+
+7) 💀 Difficult task! 💀
+Next we're going to work with the data on delays in making deals!
+The delays file contains information about which companies made deals with whom and for how much, and most importantly how late they were in doing so. Here is the data sabbet
+
+ 		client_idcompany_id delay revenue
+ 	0 2389 4240 -1 days -14:57:48.000000000 705436
+ 	1 7614 9544 -4 days -02:14:23.000000000 859266
+ 	2 2052 2427 -0 days -06:08:57.000000000 812416
+ 	3 9635 8054 -0 days -23:40:19.000000000 162312
+ 	4 8154 5503 -1 days -13:21:53.000000000 658844
+
+Let's first convert delay to timedelta format. Note that the column will not translate that easily - you will have to remove the -. Save data to df variable, format the column as needed (hint - remove -) and convert it to timedelta type.
+May need:
+pd.to_timedelta()
+pd.Series.str
+
+8) Time is good, but you would also like to break it up into intervals. Split the time into 3 intervals and put the corresponding values in the delay_categorical column
+May need:
+pd.cut().
+
+9) 💀 Difficult task! 💀
+The breakdown is certainly not bad, but we want slightly more integer values and more human names. The arguments of the pd.cut function will help us with that! Redefine column delay_categorical so that the values in it are
+'less than 1 day' - time from 0 to 1 day
+'1-2 days' - from 1 to 2 days
+'2 to 3 days' - 2 to 3 days
+'more than 3 days' - more than 3 days
+For example, for the following example
+client_id company_id delayed revenue
+14345 54631 2 days 13:34:45 1453
+54434 54834 1 days 08:26:00 453245
+34905 49834 0 days 00:26:03 14543
+The result will be
+client_id company_id delay revenue delay_categorical
+14345 54631 2 days 13:34:45 145345 2-3 days
+54434 54834 1 days 08:26:00 453245 1-2 days
+34905 49834 0 days 00:26:03 14543 less than 1 day
+May be needed:
+pd.cut()
+pd.to_timedelta()
+
+10) Perfect! Now build an interactive barplot with how often transactions are delayed, figure out the rarest and most frequent choices.

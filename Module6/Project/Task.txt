@@ -1,0 +1,17 @@
+Let's look at the distribution of impressions and clicks. Calculate the average number of impressions and the average number of clicks per ad for the whole period (round to integers).
+
+Draw a graph of the distribution of impressions per ad for the whole period.
+
+Now let's calculate the moving average of impressions with window 2. What is the moving average for April 6, 2019 (round up to integers)?
+
+The moving average is often used to find anomalies in the data. Let's try to plot the values of the arithmetic average by day and the moving average of the number of impressions on the same graph. On which day is there the greatest difference modulo between the arithmetic average and the moving average? The days in which the moving average is equal to NaN are ignored. 
+
+*Write a function that finds the problem ad (with the highest/lowest number of impressions) on the day on which the largest modulo anomaly was observed. 
+
+*Now let's load the data on the advertising clients and find the average number of days from the date of creation of the advertising client and the first running of the ad by this client.
+
+*Calculate the conversion from the creation of the advertising client to the launch of the first ad for a maximum of 365 days. Give the answer as a percentage and round to the hundredths. (Filter by the value in pd.Timedelta(365, unit='d'))
+
+*Let's break down our clients by the interval from creation to launch of the ad, equal to 30. Determine how many unique clients ran their first ad in their first month (0 to 30 days). The list of gaps for the pd.cut method is [0, 30, 90, 180, 365].
+
+*Now let's display these categories on an interactive graph with the number of unique customers in them.
