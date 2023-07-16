@@ -1,0 +1,13 @@
+Load the transaction_data.csv dataset. Check the table size, variable types, number of missing values and descriptive statistics.
+
+What values are in the transaction column? How many observations belong to one level or another? Visualise the result with a barplot. Think about how the graph can be improved.
+
+How many transactions ended in error?
+
+How many successful transactions did each user perform? Construct a histogram of the distribution of the number of successful transactions.
+
+A colleague has sent you updated data. (transaction_data_updated.csv)
+Build a user_vs_minute_pivot crosstab, where the columns are user names, rows are minutes and values are the number of transactions performed in a given minute. Fill in the missing values with zeros.
+
+Examine the graph presented. Help your colleague to find out if there is an error in the data, or if all is well.
+If there is an error in the data, correct it and store the correct number of minutes since the beginning of the day in the true_minute column.
