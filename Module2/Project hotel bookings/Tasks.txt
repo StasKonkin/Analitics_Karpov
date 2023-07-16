@@ -1,0 +1,19 @@
+Import the pandas library as a pd. Load dataset bookings.csv with separator ;. Check the table size, variable types and then output the first 7 rows to look at the data. 
+
+Lowercase the column names and replace spaces with underscores.
+
+Which countries have had the highest number of successful bookings? Please indicate top 5.
+
+How many nights on average do different types of hotels get booked?
+
+Sometimes the room type received by the customer (assigned_room_type) differs from the original booking (reserved_room_type). This can happen, for example, due to overbooking. How many such observations are encountered in the dataset?
+
+Analyse the dates of the scheduled arrival. 
+- For which month were most successful bookings in 2016? Has the most popular month changed in 2017?
+- Group the data by year and check for which month City Hotel bookings were most frequently cancelled in each of the periods
+
+Look at the numerical characteristics of the three variables: adults, children and babies. Which one has the highest average value?
+
+Create a total_kids column by combining children and babies. On average, which type of hotel is more popular with customers with children?
+
+Create a variable has_kids that takes True if the client has at least one child (total_kids), otherwise it takes False. Calculate the churn rate as a percentage of the total number of customers. Indicate among which group the rate is higher.
