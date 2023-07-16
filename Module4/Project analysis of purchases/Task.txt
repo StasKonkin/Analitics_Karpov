@@ -1,0 +1,9 @@
+Collect all the data from the data folder into one dataframe with the following columns: columns from the files themselves (product_id, quantity), as well as the user name (name), and the date of these purchases (date, corresponds to the name of the folder where the user's folder lies).
+
+Find out which user has bought the most items. If there is more than one, list the names separated by a comma with a space and in alphabetical order.
+
+Find the top 10 items by the number of units sold over all time and build a barplot. How many units of the product with product_id==56 were sold?
+
+Visualise the sales by days.
+
+How many users have purchased any product repeatedly (more than 1 time)? Repeat purchases of an item with the same product_id made on different days will be considered as repeat purchases. 

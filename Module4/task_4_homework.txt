@@ -1,0 +1,55 @@
+1) The variable df contains a dataframe. Your task is to put a string in the df_shape variable with information about how many lines and columns it has in the following form:
+'df has y rows and x columns'.
+where y is the number of rows and x is the number of columns.
+
+2) Put a series in the na_number variable, which tells you for each column how many cells contain missing values. For example, for this dataframe: task2_1.png (in the folder)
+The answer would be: task2_2.png (in folder)
+
+3) Save to the variable df_types the data types of each df dataphrame column.
+
+4) Suddenly it turns out that the variable age stores values as strings! Change the value type to integer in this column of dataframe df.
+
+5) As it turned out, we don't need sex and age columns for further analysis - remove them from dataframe.
+
+6) Now check if our df table has duplicates in the client_id field - drop all rows where the values in the client_id column are repeated.
+
+7) A short break to pure python. The list of numbers contains numbers. Add positive numbers from numbers to the positive_numbers list via a loop. If you get a 0, this loop has to be terminated.
+For example,
+numbers = [1, -2, 3, 0, -3, 2]
+Then positive_numbers should be:
+positive_numbers = [1, 3]
+
+8) Let's continue the analysis of the trip data. In the previous lesson you examined the distributions of estimates for drivers and customers. Now let's look at the columns over time!
+Save the data in the folder (taxi_peru.csv) to the variable taxi, separator - ;. Then bring the columns start_at, end_at, arrived_at to date format using pd.to_datetime(). Filter the data and leave observations with order status "asap" and "reserved" (start_type) .
+
+9) ⭐️ Task with an asterisk!⭐️
+Create a wait_time column, which will store the difference between the machine arrival time (arrived_at) and the ordering time (start_at) in minutes. You can use the .astype('timedelta64[m]') method to convert the result to minutes
+
+9.1) ⭐️ Task with asterisk!⭐️
+Let's see which drivers were late for their orders by a certain time (start_type == 'reserved'). Wait_time > 0.0 is considered late.
+Try to group filtered data by driver_id and answer with the id of driver who was late most of the time
+
+10) Think about what can influence the number of delays from the last job
+
+11) ⭐️ Task with an asterisk!⭐️
+Add a month column to store the month in which the order was placed (start_at) as a number, and a weekday column to name the day of the week. 
+
+12) ⭐️ Task with an asterisk!⭐️
+Plot the number of orders by month (month). Think about what the resulting picture might be related to. 
+Question: In which summer month were the least number of orders placed? Answer the question by writing the number of the month (6, 7 or 8). 
+
+13) ⭐️ A task with an asterisk!
+Now the graph by weekday. You can specify the order of the columns in the chart using the argument order, to which you have to pass the list of names in the desired order. For example: 
+sns.countplot(data['column'], order=['One', 'Two', 'Three'])
+Question: on which day of the week did the total number of orders come in the least?
+
+14) ⭐️ Task with an asterisk!
+We can also look at some simple metrics showing the number of unique users in a given period:
+DAU (daily active users) - number of unique users per day
+WAU (weekly active users) - number of unique users per week
+MAU (monthly active users) - number of unique users per month
+Active users are those who have used the application and placed at least one order within selected time frame. Plot the MAU and select the correct statements. 
+May come in handy:
+groupby - grouping
+nunique - number of unique values
+plot.line - line chart
