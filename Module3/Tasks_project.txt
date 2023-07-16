@@ -1,0 +1,13 @@
+Import the pandas library as a pd. Load the two datasets user_data and logs. Check table size, variable types, missing values, descriptive statistics.
+
+Which client performed the most successful operations? (success == True)
+
+Which platform has the most successful transactions?
+
+Which platform do premium customers prefer?
+
+Visualize the distribution of customer age by customer type (premium or non-premium)
+
+Graph the distribution of the number of successful transactions
+
+Visualize the number of successful transactions made on the computer platform according to age using sns.countplot (x - age, y - number of successful transactions). Which age customers had the highest number of successful transactions?

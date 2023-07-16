@@ -1,0 +1,51 @@
+1) Now get a series with the number of unique values for each column and assign it to the variable unique_num
+2) Back to the data on taxi trips! This time from Peru, with driver ratings, passenger ratings, coordinates, and a couple of other details!
+journey_id - trip id
+user_id - user id
+driver_id - id of driver
+taxi_id - id of car
+icon - trip type
+start_type - type of order (asap, reserved, delayed)
+start_at - trip start time
+start_lat - user's home location, latitude
+start_lon - user's home location, longitude
+end_at - trip end time
+end_lat is the user's final location, latitude
+end_lon - your final location, longitude
+end_state - order status
+driver_start_lat - initial location of the driver, latitude
+driver_start_lon - initial location of driver, longitude
+arrived_at - arrival time of driver
+source - platform, from which the order was made
+driver_score - client's evaluation of the driver
+rider_score - driver's evaluation of the client
+Import pandas as pd. Load dataset using ; as separator. Also specify that columns start_at, end_at, arrived_at should be read as dates (parameter parse_dates). Write the result to taxi.
+May be useful: read_csv()
+Dataset for the job: taxi_peru.csv (in folder).
+
+3) Check from which platform the most orders were made. Answer with % value rounded to integers.
+
+4) Check the distribution of driver scores (driver_score). Perform the following steps to prepare the data:
+- Calculate the frequency of occurrence of each of the scores
+- Convert to percentages and round to 2 decimal places (.mul(100).round(2))
+- Reset the indexes
+- Rename the columns to driver_score and percentage
+- Sort by driver_score in ascending order (0 to 5)
+- Write the result to driver_score_counts
+Useful functions:
+.mul() - multiply, more convenient to use in a chain of methods 
+.round() - rounding
+.reset_index() - reset index
+.value_counts() - how many times each variable value occurs
+
+5) Now make a graph! (task11.png) First we import the libraries:
+import seaborn as sns
+import matplotlib.pyplot as plt
+Specify which of the four lines in the code below you need to fix to get the following graph:
+ax = sns.barplot(x=driver_score, y=percentage, data=driver_score_counts, color='blue', alpha=0.5)
+ax.set(xlabel='Driver score', ylabel='Percentage')
+sns.despine() # remove part of the chart frame
+plt.show()
+
+6) 💀 Difficult task! 💀
+Do similar steps for rider_score (customer estimates by drivers), remembering to plot the graph. How does it differ from the distribution of the drivers' scores?
